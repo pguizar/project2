@@ -16,15 +16,15 @@ if (strlen($password) > 8) {
 	echo "Email: $email <br>";
 	echo "Password: $password <br>";
 
-	$query = 'INSERT INTO registration (fName, lName, birthday, email, password) VALUES (:fName, :lName, :birthday, :email, :password)';
+	$query = 'INSERT INTO registration (fname, lname, birthday, email, password) VALUES (:firstName, :lastName, :birthday, :email, :password)';
 
 	/*create pdo statement*/
 	$statement = $db=prepare[$query];
 
-	$statement =bindValue(':email', $email);
 	$statement =bindValue(':fname', $firstName);
 	$statement =bindValue(':lname', $lastName);
 	$statement =bindValue(':birthday', $birthday);
+	$statement =bindValue(':email', $email);
 	$statement =bindValue(':password', $password);
 
 	$statement=execute();
