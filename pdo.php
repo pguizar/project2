@@ -1,8 +1,8 @@
 <?php
-$hostname = 'sql.njit.edu';
-$username = 'pg479';
-$password = 'Pg123456789!';
-$dsn = "mysql:host=sql1.njit.edu;dbname=$username";
+$username = 'bcn3_proj';
+$password = 'w9hLvRFP';
+$hostname = 'sql1.njit.edu';
+$dsn = "mysql:host=$hostname;dbname=$username";
 try {
     $db = new PDO($dsn, $username, $password);
 
