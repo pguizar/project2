@@ -18,6 +18,6 @@
   		<?php endforeach; ?>	
   	</table>
 
-</body>
+</body> 
 
 </html>
