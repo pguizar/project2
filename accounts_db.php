@@ -17,5 +17,5 @@ function validate_login($email, $password) {
 		return false;
 	}
 
-}
+} 
 ?>
