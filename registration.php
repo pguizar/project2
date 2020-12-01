@@ -75,7 +75,7 @@ if(isset($_POST['submit'])){
              <br />
              <input type="submit" name="submit" value="Register" class="submit"/>
         </form>
-  </div>
+  </div> 
     <?php
 			echo "<h2>Your Input:</h2>";
 			echo $fName;
