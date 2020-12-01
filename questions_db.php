@@ -14,4 +14,4 @@ function get_users_questions ($userId) {
 	return $questions;
 }
 
-?>
+?> 
