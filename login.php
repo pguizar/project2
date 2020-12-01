@@ -7,7 +7,7 @@
         		
 </head>
 <body>
-		<div class = "nav"> 
+		<div class = "nav">
 		  <ul>
 			  <li> <a href = "registration.php" > Registration Form </a> </li>
 			  <li> <a href = "newQuestionForm.php" > New Question Form </a> </li>
