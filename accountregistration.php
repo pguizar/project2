@@ -2,8 +2,8 @@
 
 require('pdo.php');
 
-$firstName = filter_input(INPUT_POST, 'firstName');
-$lastName = filter_input(INPUT_POST, 'lastName');
+$firstName = filter_input(INPUT_POST, 'fName');
+$lastName = filter_input(INPUT_POST, 'lName');
 $birthday = filter_input(INPUT_POST, 'birthday');
 $email = filter_input(INPUT_POST, 'email');
 $password = filter_input(INPUT_POST, 'password');
