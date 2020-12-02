@@ -3,7 +3,7 @@
 function get_users_questions ($userId) {
 	gloabl $db;
 
-	$query = 'SELECT * FROM questions WHERE ownerid = $userId';
+	$query = 'SELECT * FROM questions WHERE ownerid = :userId';
 	$statement = $db->prepare($query);
 	$statement->bindValue(':userId', $userId);
 	$statement->execute();
