@@ -1,7 +1,7 @@
 <?php
 require('pdo.php');
 require('accounts_db.php');
-//require('questions_db.php');
+require('questions_db.php');
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
@@ -11,7 +11,7 @@ if ($action == NULL) {
     }
 }
 switch ($action) {
-    case 'show_login': { 
+    case 'show_login': {
         include('login.php');
         break;
     }
@@ -24,12 +24,12 @@ switch ($action) {
     	else {
     		$userId = validate_login($email, $password);
     		if ($userId == false) {
-                //echo "Invalid login";
-    			header('Location: registration.php');
+                echo "Invalid login";
+    			//header('Location: registration.php');
     		} 
-    		else if ($userId == true){
-                echo "Valid login";
-    			//header("Location: .?action=display_questions&userId=$userId");
+    		else {
+                //echo "Valid login";
+    			header("Location: .?action=display_questions&userId=$userId");
     		}	
     	}
     	break;
@@ -39,14 +39,14 @@ switch ($action) {
         break;
     }
     case 'display_questions': {
-        /*$userId = filter_input(INPUT_GET, 'userId');
+        $userId = filter_input(INPUT_GET, 'userId');
         if ($userId == NULL || $userId < 0) {
             header('Location: .?action=display_login');
         } else {
             $questions = get_users_questions($userId);
             include('display_questions.php');
 
-        }*/
+        }
         break;
     }
 }
