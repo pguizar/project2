@@ -52,7 +52,7 @@ if(isset($_POST['submit'])){
 
 ?>
 <div class= "form">
-    	<form action="registration.php" method="POST">
+    	<form action="accountregistration.php" method="POST">
             <label for="fName"> First Name:
             <input type="text" id="fName" name="fName" required /> </label>
             <br />
@@ -75,7 +75,7 @@ if(isset($_POST['submit'])){
              <br />
              <input type="submit" name="submit" value="Register" class="submit"/>
         </form>
-  </div> 
+  </div>
     <?php
 			echo "<h2>Your Input:</h2>";
 			echo $fName;
