@@ -1,7 +1,7 @@
 <?php
 
 function get_users_questions ($userId) {
-	gloabl $db;
+	global $db;
 
 	$query = 'SELECT * FROM questions WHERE ownerid = :userId';
 	$statement = $db->prepare($query);
