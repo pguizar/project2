@@ -16,23 +16,23 @@ switch ($action) {
         break;
     }
     case 'validate_login': {
-    	$email = filter_input(INPUT_POST, 'email');
-    	$password = filter_input(INPUT_POST, 'password');
-    	if ($email == NULL || $password == NULL){
-    		echo 'Email and password not included';
-    	} 
-    	else {
-    		$userId = validate_login($email, $password);
-    		if ($userId == false) {
+        $email = filter_input(INPUT_POST, 'email');
+        $password = filter_input(INPUT_POST, 'password');
+        if ($email == NULL || $password == NULL){
+            echo 'Email and password not included';
+        } 
+        else {
+            $userId = validate_login($email, $password);
+            if ($userId == false) {
                 //echo "Invalid login";
-    			header('Location: registration.php');
-    		} 
-    		else {
+                header('Location: registration.php');
+            } 
+            else {
                 //echo "Valid login";
-    			header("Location: .?action=display_questions&userId=$userId");
-    		}	
-    	}
-    	break;
+                header("Location: .?action=display_questions&userId=$userId");
+            }   
+        }
+        break;
     }
     case 'display_registration': {
         include('registration.php');
@@ -43,7 +43,6 @@ switch ($action) {
     }
     case 'display_questions': {
         $userId = filter_input(INPUT_GET, 'userId');
-        $fName = filter_input(INPUT_GET, 'fname');
         if ($userId == NULL || $userId < 0) {
             header('Location: .?action=display_login');
         } 
@@ -85,7 +84,7 @@ switch ($action) {
         break;
 
     }
-    break;
+   
 
     }
 
