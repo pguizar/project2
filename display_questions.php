@@ -6,7 +6,7 @@
       		
 </head>
 <body>
-  <a href=".?action=display_question_form&userId=$userId">Add Question</a>
+  <a href=".?action=display_question_form&userId=<?php echo $userId; ?>">Add Question</a>
 
   <h1> "Welcome " </h1>
   	<table>
@@ -20,8 +20,6 @@
   				<td><?php echo $question['title']; ?></td>
   				<td><?php echo $question['body']; ?></td>
   			</tr>
-
-
   		<?php endforeach; ?>	
   	</table>
 
