@@ -24,8 +24,8 @@ switch ($action) {
     	else {
     		$userId = validate_login($email, $password);
     		if ($userId == false) {
-                echo "Invalid login";
-    			//header('Location: registration.php');
+                //echo "Invalid login";
+    			header('Location: registration.php');
     		} 
     		else {
                 //echo "Valid login";
@@ -38,18 +38,57 @@ switch ($action) {
         include('registration.php');
         break;
     }
+    case 'submit_registration': {
+
+    }
     case 'display_questions': {
         $userId = filter_input(INPUT_GET, 'userId');
+        $fName = filter_input(INPUT_GET, 'fname');
         if ($userId == NULL || $userId < 0) {
             header('Location: .?action=display_login');
-        } else {
+        } 
+        else 
+        {
             $questions = get_users_questions($userId);
             include('display_questions.php');
-
         }
         break;
     }
-}
+    case 'display_question_form': {
+        $firstName = filter_input(INPUT_POST, 'fName');
+        $userId = filter_input(INPUT_GET, 'userId');
+        if ($userId == NULL || $userId < 0){
+            header('Location: .?action=display_login');
+        }
+        else
+        {
+            include('newQuestionForm.php');
+        }
+        break;
+    }
+        
+    case 'submit_question': {
+        $userId = filter_input(INPUT_POST, 'userId');
+        $title = filter_input(INPUT_POST, 'title');
+        $body = filter_input(INPUT_POST, 'body');
+        $skills = filter_input(INPUT_POST, 'skills');
+
+
+        if ($userId == NULL || $title == NULL || $body == NULL || $skills == NULL){
+            echo "All fields are required";
+        }
+        else
+        {
+            create_question($title, $body, $skills, $userId);
+            header("Location: .?action=display_questions&userId=$userId");
+        }
+        break;
+
+    }
+    break;
+
+    }
+
 
 
 
