@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Display Questions</title>      		
+	<title>Display Questions</title>
+  <link rel="stylesheet" href="design1.css">
+      		
 </head>
 <body>
-  <a href="Location: display_questions&userId=<?php echo $userId; ?>">Add Question</a>
+  <a href=".?action=display_question_form&userId=$userId">Add Question</a>
+
+  <h1> "Welcome " </h1>
   	<table>
   		<tr>
   			<th>Name</th>
