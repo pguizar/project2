@@ -14,7 +14,8 @@
 			</ul>
 	</nav>
   <div class= "form">
-    	<form action="accounts_db.php" method="POST">
+    	<form action="index.php" method="POST">
+        <input type="hidden" name="action" value="submit_question">
 
             <label for="title"> Question Name <i class="fa fa-question"></i>
             <input type="text" id="title" name="title" /> </label>
