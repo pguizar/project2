@@ -52,7 +52,7 @@ if(isset($_POST['submit'])){
 
 ?>
 <div class= "form">
-    	<form action="accountregistration.php" method="POST">
+    	<form action="registration_db.php" method="POST">
             <label for="fName"> First Name:
             <input type="text" id="fName" name="fName" required /> </label>
             <br />
@@ -76,19 +76,7 @@ if(isset($_POST['submit'])){
              <input type="submit" name="submit" value="Register" class="submit"/>
         </form>
   </div>
-    <?php
-			echo "<h2>Your Input:</h2>";
-			echo $fName;
-			echo "<br>";
-			echo $lName;
-      echo "<br>";
-      echo $birthday;
-      echo "<br>";
-      echo $email;
-      echo "<br>";
-      echo $password;
 
-		?>
 
 
 </body>
