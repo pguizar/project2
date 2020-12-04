@@ -1,6 +1,9 @@
+
+
+
 <?php
 
-require('pdo.php');
+require('pdo.php'); 
 
 $firstName = filter_input(INPUT_POST, 'fName');
 $lastName = filter_input(INPUT_POST, 'lName');
@@ -8,13 +11,9 @@ $birthday = filter_input(INPUT_POST, 'birthday');
 $email = filter_input(INPUT_POST, 'email');
 $password = filter_input(INPUT_POST, 'password');
 
-echo "First Name: $firstName <br>";
-echo "Last Name: $lastName <br>";
-echo "Birthday: $birthday <br>";
-echo "Email: $email <br>";
-echo "Password: $password <br>";
 
-$query = 'INSERT INTO accounts (email, fname, lname, birthday, password) VALUES (:fname, :lname, :birthday, :email, :password)';
+
+$query = 'INSERT INTO accounts (email, fname, lname, birthday, password) VALUES (:email, :fname, :lname, :birthday, :password)';
 
 	$statement = $db->prepare($query);
 
@@ -26,15 +25,8 @@ $query = 'INSERT INTO accounts (email, fname, lname, birthday, password) VALUES 
 	$statement->execute();
 
 	$statement->closeCursor();
+if(isset($_POST['submit'])){
 
-	if (empty($_POST["firstName"])) {
-	    $nameErr = "<p class='error'>First Name is required </p><br>";
-	      echo $nameErr ;
-	    }
-	if (empty($_POST["lastName"])) {
-	    $nameErr = "<p class='error'>Last Name is required </p><br>";
-	      echo $nameErr ;
-	    }
 	if (empty($_POST["birthday"])) {
 	    $nameErr = "<p class='error'>Birthday is required </p><br>";
 	      echo $nameErr ;
@@ -52,7 +44,11 @@ $query = 'INSERT INTO accounts (email, fname, lname, birthday, password) VALUES 
 	    }
 	if(strlen($password) < 8) {
 	    echo ("<p class='error'>Password should be at least 8 characters in length. </p> ");}
+}
+include('login.php');
 
 	
 ?>
+
+
 
